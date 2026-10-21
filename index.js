@@ -22,7 +22,8 @@
     d.email && {label:d.email, href:`mailto:${d.email}`},
     d.instagram && {label:'Instagram', href:d.instagram.startsWith('http') ? d.instagram : `https://instagram.com/${d.instagram.replace(/^@/,'')}`}
   ].filter(Boolean);
-  $('#contact-actions').innerHTML = links.length ? `<a class="contact-primary" href="${safe(links[0].href)}" target="${links[0].href.startsWith('http') ? '_blank' : '_self'}" rel="noopener">Обсудить проект <span>↗</span></a><div class="contact-links">${links.map(x=>`<a href="${safe(x.href)}" ${x.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${safe(x.label)} ↗</a>`).join('')}</div>` : `<span class="contact-primary is-placeholder">Добавьте контакт в js/data.js <span>↗</span></span><p class="contact-hint">Укажите WhatsApp, Telegram, телефон или почту, чтобы включить кнопку связи.</p>`;
+  const contactActions = $('#contact-actions');
+  if (contactActions) contactActions.innerHTML = links.length ? `<a class="contact-primary" href="${safe(links[0].href)}" target="${links[0].href.startsWith('http') ? '_blank' : '_self'}" rel="noopener">Обсудить проект <span>↗</span></a><div class="contact-links">${links.map(x=>`<a href="${safe(x.href)}" ${x.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${safe(x.label)} ↗</a>`).join('')}</div>` : `<span class="contact-primary is-placeholder">Добавьте контакт в js/data.js <span>↗</span></span><p class="contact-hint">Укажите WhatsApp, Telegram, телефон или почту, чтобы включить кнопку связи.</p>`;
 
   const menu = $('.menu-toggle'), nav = $('#main-nav');
   menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню'); nav.classList.toggle('is-open', open); document.body.classList.toggle('menu-open', open); });
