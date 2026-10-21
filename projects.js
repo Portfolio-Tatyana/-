@@ -53,7 +53,7 @@
   }
 
   function openViewer(index) {
-    viewerIndex = index; updateViewer(); viewer.hidden = false; document.body.classList.add('viewer-open'); $('.viewer-close').focus();
+    viewerIndex = index; updateViewer(); viewer.showModal(); document.body.classList.add('viewer-open'); $('.viewer-close').focus();
   }
   function updateViewer() {
     const photo = shownPhotos[viewerIndex]; if (!photo) return;
@@ -61,17 +61,17 @@
     viewerCaption.textContent = `${activeWork.title} · ${photo.room} · ${String(viewerIndex + 1).padStart(2,'0')} / ${String(shownPhotos.length).padStart(2,'0')}`;
   }
   function moveViewer(step) { viewerIndex = (viewerIndex + step + shownPhotos.length) % shownPhotos.length; updateViewer(); }
-  function closeViewer() { viewer.hidden = true; document.body.classList.remove('viewer-open'); viewerImage.removeAttribute('src'); }
+  function closeViewer() { if (viewer.open) viewer.close(); document.body.classList.remove('viewer-open'); viewerImage.removeAttribute('src'); }
   $('.viewer-close').addEventListener('click', closeViewer);
   $('.viewer-prev').addEventListener('click', () => moveViewer(-1));
   $('.viewer-next').addEventListener('click', () => moveViewer(1));
   viewer.addEventListener('click', event => { if (event.target === viewer) closeViewer(); });
+  viewer.addEventListener('close', () => { document.body.classList.remove('viewer-open'); viewerImage.removeAttribute('src'); });
   $('.work-dialog-close').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
   dialog.addEventListener('close', () => { closeViewer(); document.body.classList.remove('dialog-open'); returnFocus?.focus(); });
   document.addEventListener('keydown', event => {
-    if (!viewer.hidden && (event.key === 'ArrowLeft' || event.key === 'ArrowRight')) { event.preventDefault(); moveViewer(event.key === 'ArrowRight' ? 1 : -1); }
-    else if (event.key === 'Escape' && !viewer.hidden) { event.stopPropagation(); closeViewer(); }
+    if (viewer.open && (event.key === 'ArrowLeft' || event.key === 'ArrowRight')) { event.preventDefault(); moveViewer(event.key === 'ArrowRight' ? 1 : -1); }
   });
   drawRoomFilters();
   const requested = location.hash.slice(1);
