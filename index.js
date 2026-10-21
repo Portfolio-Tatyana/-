@@ -25,10 +25,6 @@
   const contactActions = $('#contact-actions');
   if (contactActions) contactActions.innerHTML = links.length ? `<a class="contact-primary" href="${safe(links[0].href)}" target="${links[0].href.startsWith('http') ? '_blank' : '_self'}" rel="noopener">Обсудить проект <span>↗</span></a><div class="contact-links">${links.map(x=>`<a href="${safe(x.href)}" ${x.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${safe(x.label)} ↗</a>`).join('')}</div>` : `<span class="contact-primary is-placeholder">Добавьте контакт в js/data.js <span>↗</span></span><p class="contact-hint">Укажите WhatsApp, Telegram, телефон или почту, чтобы включить кнопку связи.</p>`;
 
-  const menu = $('.menu-toggle'), nav = $('#main-nav');
-  menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); menu.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню'); nav.classList.toggle('is-open', open); document.body.classList.toggle('menu-open', open); });
-  nav.addEventListener('click', e => { if (e.target.closest('a')) { menu.setAttribute('aria-expanded','false'); menu.setAttribute('aria-label','Открыть меню'); nav.classList.remove('is-open'); document.body.classList.remove('menu-open'); } });
-
   if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-eyebrow, .hero h1, .hero-bottom', {y:24, opacity:0, duration:.8, stagger:.12, ease:'power3.out', delay:.12});

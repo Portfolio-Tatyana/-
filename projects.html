@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=photo-close-20261021">
+  <link rel="stylesheet" href="style.css?v=mobile-nav-fix-20261021">
 </head>
 <body class="works-page">
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -17,9 +17,8 @@
     <a class="brand" href="index.html#top" aria-label="На главную"><span class="brand-mark">Т</span><span>Татьяна</span></a>
     <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
     <nav class="nav" id="main-nav" aria-label="Основная навигация">
-      <a href="#top" aria-current="page">Проекты</a><a href="index.html#about">Обо мне</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a><a href="index.html#contact">Контакты</a>
+      <a href="index.html#top">Главная</a><a href="#top" aria-current="page">Проекты</a><a href="index.html#about">Обо мне</a><a href="index.html#services">Услуги</a><a href="index.html#pricing">Прайс</a><a href="index.html#reviews">Отзывы</a>
     </nav>
-    <a class="header-note" href="index.html#contact">Обсудить проект <span>↗</span></a>
   </header>
   <main id="main">
     <section class="works-intro section">
@@ -40,6 +39,6 @@
     <div class="work-dialog-inner"><header class="work-dialog-head"><p class="eyebrow" id="dialog-kicker"></p><h2 id="dialog-title"></h2><p class="work-dialog-summary" id="dialog-summary"></p></header><div class="room-filters" id="room-filters" aria-label="Фильтр фотографий по комнате"></div><p class="room-result" id="room-result" aria-live="polite"></p><div class="work-photo-grid" id="work-photo-grid"></div></div>
   </dialog>
   <dialog class="photo-viewer" id="photo-viewer" aria-label="Просмотр фотографии"><button class="viewer-close" type="button" aria-label="Закрыть просмотр">×</button><button class="viewer-arrow viewer-prev" type="button" aria-label="Предыдущее фото">←</button><figure><img id="viewer-image" alt=""><figcaption id="viewer-caption"></figcaption></figure><button class="viewer-arrow viewer-next" type="button" aria-label="Следующее фото">→</button></dialog>
-  <script src="data.js" defer></script><script src="works-data.js" defer></script><script src="projects.js?v=5d00383" defer></script><script src="menu.js" defer></script>
+  <script src="data.js" defer></script><script src="works-data.js" defer></script><script src="projects.js?v=5d00383" defer></script><script src="menu.js?v=mobile-nav-fix-20261021" defer></script>
 </body>
 </html>
