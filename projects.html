@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1eb">
+  <title>Портфолио проектов — Татьяна</title>
+  <meta name="description" content="Реализованные проекты интерьеров. Фотографии квартир и домов с фильтрами по комнатам и проектам.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="works-page">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html#top" aria-label="На главную"><span class="brand-mark">Т</span><span>Татьяна</span></a>
+    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+    <nav class="nav" id="main-nav" aria-label="Основная навигация">
+      <a href="#top" aria-current="page">Проекты</a><a href="index.html#about">Обо мне</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a><a href="index.html#contact">Контакты</a>
+    </nav>
+    <a class="header-note" href="index.html#contact">Обсудить проект <span>↗</span></a>
+  </header>
+  <main id="main">
+    <section class="works-intro section">
+      <a class="back-link" href="index.html#projects">← На главную</a>
+      <p class="eyebrow">ПОРТФОЛИО · <span id="works-photo-total">243</span> ФОТОГРАФИИ</p>
+      <h1>Проекты,<br><em>в деталях</em></h1>
+      <p class="works-lede">Интерьеры квартир и домов — от общего замысла до решений для каждой комнаты. Выберите категорию или откройте проект, чтобы посмотреть фотографии.</p>
+    </section>
+    <section class="works-catalog section" aria-label="Каталог проектов">
+      <div class="works-toolbar"><div><p class="eyebrow">ПРОЕКТЫ</p><p class="works-result" id="works-result" aria-live="polite"></p></div><div class="works-filters" id="works-filters" aria-label="Фильтр по комнатам"></div></div>
+      <div class="works-grid" id="works-grid"></div>
+    </section>
+    <section class="works-contact"><p class="eyebrow">ВАШ ИНТЕРЬЕР МОЖЕТ БЫТЬ СЛЕДУЮЩИМ</p><h2>Обсудим <em>ваш проект?</em></h2><a class="round-link" href="index.html#contact" aria-label="Обсудить проект">↗</a></section>
+  </main>
+  <footer class="footer"><a class="brand" href="index.html#top"><span class="brand-mark">Т</span><span>Татьяна</span></a><span>Авторское портфолио · <span id="year"></span></span><a class="round-link" href="#top" aria-label="Наверх">⬆</a></footer>
+
+  <dialog class="work-dialog" id="work-dialog" aria-label="Фотографии проекта">
+    <button class="work-dialog-close" type="button" aria-label="Закрыть проект">×</button>
+    <div class="work-dialog-inner"><header class="work-dialog-head"><p class="eyebrow" id="dialog-kicker"></p><h2 id="dialog-title"></h2><p class="work-dialog-summary" id="dialog-summary"></p></header><div class="room-filters" id="room-filters" aria-label="Фильтр фотографий по комнате"></div><p class="room-result" id="room-result" aria-live="polite"></p><div class="work-photo-grid" id="work-photo-grid"></div></div>
+  </dialog>
+  <div class="photo-viewer" id="photo-viewer" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" hidden><button class="viewer-close" type="button" aria-label="Закрыть просмотр">×</button><button class="viewer-arrow viewer-prev" type="button" aria-label="Предыдущее фото">←</button><figure><img id="viewer-image" alt=""><figcaption id="viewer-caption"></figcaption></figure><button class="viewer-arrow viewer-next" type="button" aria-label="Следующее фото">→</button></div>
+  <script src="data.js" defer></script><script src="works-data.js" defer></script><script src="projects.js" defer></script><script src="menu.js" defer></script>
+</body>
+</html>
