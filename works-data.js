@@ -556,7 +556,7 @@ window.WORKS = [
     "summary": "Этот интерьер — идеальный баланс между стилем и функциональностью, где взрослые могут отдыхать душой, а ребенок — расти в окружении красоты и комфорта.",
     "subtitle": "Квартира для семьи из трёх человек",
     "area": "",
-    "cover": "photos/KVARTIRA-DLYA-SEMI/kitchen-living-01.jpg",
+    "cover": "photos/KVARTIRA-DLYA-SEMI/kitchen-living-02.jpg",
     "rooms": [
       "Кухня-гостиная",
       "Детская",
