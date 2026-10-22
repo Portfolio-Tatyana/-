@@ -1,6 +1,6 @@
 /* Весь текст и контент для замены собраны здесь. Пустые контакты намеренно не создают фиктивные ссылки. */
 window.PORTFOLIO = {
-  designer: { name: 'Татьяна', city: '[ГОРОД / РЕГИОН]', email: '', phone: '', whatsapp: '', telegram: '', instagram: '' },
+  designer: { name: 'Татьяна', city: '[ГОРОД / РЕГИОН]', email: '', phone: '+7 929 662 43 44', whatsapp: '', telegram: 'koshelevainterior', max: 'https://max.ru/u/f9LHodD0cOKnkapblB6i0CUecEAE5LDpx3ORCdAC7e9ws3YOVZXMjcQV1Mw', instagram: '' },
   projects: [],
   services: [
     { title: 'Дизайн интерьера', text: 'Целостная концепция и проектирование пространства под ваш образ жизни.' },

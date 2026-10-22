@@ -18,7 +18,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=mobile-nav-fix-20261021">
+    <link rel="stylesheet" href="style.css?v=contacts-20261022">
 </head>
 
 <body>
@@ -50,30 +50,6 @@
                 <div class="image-caption"><span>01 / 13</span><span>Тихие формы · естественный свет</span></div>
                 <div class="hero-stamp" aria-hidden="true">пространство<br>для жизни</div>
             </div>
-        </section>
-
-        <section class="contact section contact-form-section" id="contact" aria-labelledby="contact-title">
-            <div class="contact-intro">
-                <p class="eyebrow">ОБСУДИТЬ ПРОЕКТ</p>
-                <h2 id="contact-title">Расскажите<br><em>о вашей задаче</em></h2>
-                <p class="contact-lede">Оставьте имя и удобный способ связи — обсудим пространство, сроки и формат работы.</p>
-            </div>
-            <form class="contact-form" id="contact-form" action="#contact" method="get">
-                <label>Ваше имя
-                    <input type="text" autocomplete="name" placeholder="Как к вам обращаться" required>
-                </label>
-                <label>Телефон или мессенджер
-                    <input type="text" autocomplete="tel" placeholder="+7 … или @ник" required>
-                </label>
-                <label class="contact-message">Коротко о проекте
-                    <textarea rows="3" placeholder="Например: квартира 80 м², нужна планировка и дизайн-проект"></textarea>
-                </label>
-                <div class="contact-form-bottom">
-                    <p class="contact-form-note">Форма пока работает как макет: данные не отправляются и не сохраняются.</p>
-                    <button class="contact-submit" type="submit">Проверить форму <span aria-hidden="true">↗</span></button>
-                </div>
-                <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite" hidden></p>
-            </form>
         </section>
 
         <section class="projects section" id="projects">
@@ -143,14 +119,13 @@
             </div>
             <div class="review-grid" id="review-grid" aria-live="polite"></div>
         </section>
-        <section class="contact-footer section" aria-labelledby="contact-footer-title">
+        <section class="contact-footer section" id="contact" aria-labelledby="contact-footer-title">
             <div>
                 <p class="eyebrow">НА СВЯЗИ</p>
                 <h2 id="contact-footer-title">Обсудим ваш<br><em>интерьер</em></h2>
             </div>
             <div class="contact-footer-actions">
                 <div class="contact-actions" id="contact-actions" aria-live="polite"></div>
-                <a class="contact-primary" href="#contact">Оставить заявку <span aria-hidden="true">↗</span></a>
             </div>
         </section>
     </main>
@@ -159,9 +134,9 @@
     </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-        <script src="data.js" defer></script>
+        <script src="data.js?v=contacts-20261022" defer></script>
         <script src="works-data.js" defer></script>
-        <script src="index.js?v=mobile-nav-fix-20261021" defer></script>
+        <script src="index.js?v=contacts-20261022" defer></script>
         <script src="menu.js?v=mobile-nav-fix-20261021" defer></script>
 </body>
 

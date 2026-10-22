@@ -16,22 +16,12 @@
   $('#reviews-total').textContent = `${String(reviewTotal).padStart(2, '0')} ${reviewWord} о совместной работе`;
 
   const d = data.designer; const links = [
-    d.whatsapp && {label:'WhatsApp', href:`https://wa.me/${d.whatsapp.replace(/\D/g,'')}`},
     d.telegram && {label:'Telegram', href:`https://t.me/${d.telegram.replace(/^@/,'')}`},
-    d.phone && {label:d.phone, href:`tel:${d.phone.replace(/[^+\d]/g,'')}`},
-    d.email && {label:d.email, href:`mailto:${d.email}`},
-    d.instagram && {label:'Instagram', href:d.instagram.startsWith('http') ? d.instagram : `https://instagram.com/${d.instagram.replace(/^@/,'')}`}
+    d.max && {label:'MAX', href:d.max},
+    d.phone && {label:d.phone, href:`tel:${d.phone.replace(/[^+\d]/g,'')}`}
   ].filter(Boolean);
   const contactActions = $('#contact-actions');
-  if (contactActions) contactActions.innerHTML = links.length ? `<div class="contact-links">${links.map(x=>`<a href="${safe(x.href)}" ${x.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${safe(x.label)} ↗</a>`).join('')}</div>` : `<p class="contact-hint">Ссылки на мессенджеры добавим после получения актуальных контактов.</p>`;
-
-  const contactForm = $('#contact-form');
-  const contactFormStatus = $('#contact-form-status');
-  if (contactForm && contactFormStatus) contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    contactFormStatus.hidden = false;
-    contactFormStatus.textContent = 'Это макет: данные не отправлены и не сохранены.';
-  });
+  if (contactActions) contactActions.innerHTML = `<div class="contact-links">${links.map(x=>`<a href="${safe(x.href)}" ${x.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${safe(x.label)} ↗</a>`).join('')}</div>`;
 
   if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     gsap.registerPlugin(ScrollTrigger);
