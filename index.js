@@ -23,7 +23,15 @@
     d.instagram && {label:'Instagram', href:d.instagram.startsWith('http') ? d.instagram : `https://instagram.com/${d.instagram.replace(/^@/,'')}`}
   ].filter(Boolean);
   const contactActions = $('#contact-actions');
-  if (contactActions) contactActions.innerHTML = links.length ? `<a class="contact-primary" href="${safe(links[0].href)}" target="${links[0].href.startsWith('http') ? '_blank' : '_self'}" rel="noopener">Обсудить проект <span>↗</span></a><div class="contact-links">${links.map(x=>`<a href="${safe(x.href)}" ${x.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${safe(x.label)} ↗</a>`).join('')}</div>` : `<span class="contact-primary is-placeholder">Добавьте контакт в js/data.js <span>↗</span></span><p class="contact-hint">Укажите WhatsApp, Telegram, телефон или почту, чтобы включить кнопку связи.</p>`;
+  if (contactActions) contactActions.innerHTML = links.length ? `<div class="contact-links">${links.map(x=>`<a href="${safe(x.href)}" ${x.href.startsWith('http')?'target="_blank" rel="noopener"':''}>${safe(x.label)} ↗</a>`).join('')}</div>` : `<p class="contact-hint">Ссылки на мессенджеры добавим после получения актуальных контактов.</p>`;
+
+  const contactForm = $('#contact-form');
+  const contactFormStatus = $('#contact-form-status');
+  if (contactForm && contactFormStatus) contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    contactFormStatus.hidden = false;
+    contactFormStatus.textContent = 'Это макет: данные не отправлены и не сохранены.';
+  });
 
   if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     gsap.registerPlugin(ScrollTrigger);

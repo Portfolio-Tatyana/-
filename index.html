@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f4f1eb">
-    <title>Татьяна — интерьерное портфолио</title>
+    <title>Кошелева - дизайн интерьера</title>
     <meta name="description"
         content="Портфолио дизайнера интерьера. Пространства, в которых эстетика, функциональность и индивидуальность становятся единым целым.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Татьяна — интерьерное портфолио">
+    <meta property="og:title" content="Кошелева - дизайн интерьера">
     <meta property="og:description" content="Авторский дизайн интерьеров. Избранные проекты и подход к работе.">
     <meta property="og:image" content="assets/images/og-cover.svg">
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
@@ -24,14 +24,14 @@
 <body>
     <a class="skip-link" href="#main">Перейти к содержанию</a>
     <header class="site-header" id="top">
-        <a class="brand" href="#top" aria-label="На главную"><span class="brand-mark">Т</span><span
-                data-name>Татьяна</span></a>
+        <a class="brand" href="#top" aria-label="На главную"><span class="brand-mark">Т</span><span>Kosheleva design</span></a>
         <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false"
             aria-controls="main-nav"><span></span><span></span></button>
         <nav class="nav" id="main-nav" aria-label="Основная навигация">
             <a href="projects.html">Проекты</a><a href="#about">Обо мне</a><a href="#services">Услуги</a><a href="#pricing">Прайс</a><a
-                href="#reviews">Отзывы</a>
+                href="#reviews">Отзывы</a><a href="#contact">Контакты</a>
         </nav>
+        <a class="header-note" href="#contact">Обсудить проект <span>↗</span></a>
     </header>
     <main id="main">
         <section class="hero" aria-labelledby="hero-title">
@@ -52,6 +52,30 @@
             </div>
         </section>
 
+        <section class="contact section contact-form-section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-intro">
+                <p class="eyebrow">ОБСУДИТЬ ПРОЕКТ</p>
+                <h2 id="contact-title">Расскажите<br><em>о вашей задаче</em></h2>
+                <p class="contact-lede">Оставьте имя и удобный способ связи — обсудим пространство, сроки и формат работы.</p>
+            </div>
+            <form class="contact-form" id="contact-form" action="#contact" method="get">
+                <label>Ваше имя
+                    <input type="text" autocomplete="name" placeholder="Как к вам обращаться" required>
+                </label>
+                <label>Телефон или мессенджер
+                    <input type="text" autocomplete="tel" placeholder="+7 … или @ник" required>
+                </label>
+                <label class="contact-message">Коротко о проекте
+                    <textarea rows="3" placeholder="Например: квартира 80 м², нужна планировка и дизайн-проект"></textarea>
+                </label>
+                <div class="contact-form-bottom">
+                    <p class="contact-form-note">Форма пока работает как макет: данные не отправляются и не сохраняются.</p>
+                    <button class="contact-submit" type="submit">Проверить форму <span aria-hidden="true">↗</span></button>
+                </div>
+                <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite" hidden></p>
+            </form>
+        </section>
+
         <section class="projects section" id="projects">
             <div class="section-heading">
                 <div>
@@ -68,11 +92,11 @@
         <section class="about section" id="about">
             <div class="about-photo"><img
                     src="site-images/klient-photo.jpg"
-                    alt="Татьяна Кошелева — дизайнер интерьеров, дизайн-проект под ключ" width="1024" height="1024"
+                    alt="Татьяна Кошелева — дизайнер интерьеров, дизайн-проект под ключ" width="523" height="886"
                     loading="lazy"><span class="photo-index">ТАТЬЯНА КОШЕЛЕВА · ДИЗАЙН ИНТЕРЬЕРОВ</span></div>
             <div class="about-copy">
                 <p class="eyebrow">02 — ОБО МНЕ</p>
-                <h2>Здравствуйте,<br><em>я Татьяна</em></h2>
+                <h2>Татьяна Кошелева.<br><em>Дизайнер интерьеров.</em></h2>
                 <p class="about-text">Спроектировала более 250 интерьеров. Работала с проектами в Европе и премиальных жилых комплексах столицы. Помогла заказчикам сэкономить миллионы рублей и немало нервных клеток.</p>
                 <p class="about-text">Я не проснулась однажды дизайнером. Я училась — получила диплом и уже 10 лет применяю знания на практике. Диплом и опыт — основа вашего спокойствия во время ремонта.</p>
                 <p class="about-text"><strong>Почему выбирают меня?</strong></p>
@@ -119,10 +143,20 @@
             </div>
             <div class="review-grid" id="review-grid" aria-live="polite"></div>
         </section>
+        <section class="contact-footer section" aria-labelledby="contact-footer-title">
+            <div>
+                <p class="eyebrow">НА СВЯЗИ</p>
+                <h2 id="contact-footer-title">Обсудим ваш<br><em>интерьер</em></h2>
+            </div>
+            <div class="contact-footer-actions">
+                <div class="contact-actions" id="contact-actions" aria-live="polite"></div>
+                <a class="contact-primary" href="#contact">Оставить заявку <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
     </main>
-    <footer class="footer"><a class="brand" href="#top"><span class="brand-mark">Т</span><span
-                data-name>Татьяна</span></a><span>Авторское портфолио · <span id="year"></span></span><a
+    <footer class="footer"><a class="brand" href="#top"><span class="brand-mark">Т</span><span>Kosheleva design</span></a><span>Авторское портфолио · <span id="year"></span></span><a
             class="round-link" href="#" aria-label="Смотреть проекты">⬆</a>
+    </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
         <script src="data.js" defer></script>

@@ -1439,3 +1439,223 @@ body.works-page .menu-open, body.works-page.dialog-open { overflow: hidden; }
   .works-contact { margin-top: 48px; padding-top: 56px; padding-bottom: 100px; }
   .works-contact .round-link { right: var(--gutter); bottom: 28px; }
 }
+
+/* Контактная форма предварительная: при отправке данные никуда не уходят. */
+.contact-form-section {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(36px, 8vw, 120px);
+    align-items: start;
+    background: var(--paper-2)
+}
+
+.contact-intro h2,
+.contact-footer h2 {
+    font-size: clamp(44px, 6vw, 82px);
+    line-height: 1.04
+}
+
+.contact-intro h2 em,
+.contact-footer h2 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #8d877d
+}
+
+.contact-lede {
+    max-width: 370px;
+    margin: 24px 0 0;
+    color: #656057;
+    font: 17px/1.7 var(--serif)
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+    padding-top: 8px
+}
+
+.contact-form label {
+    display: grid;
+    gap: 10px;
+    color: #6d685f;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #bdb6ab;
+    border-radius: 0;
+    padding: 12px 0;
+    background: transparent;
+    color: var(--ink);
+    font: 14px/1.6 var(--sans);
+    letter-spacing: 0;
+    text-transform: none
+}
+
+.contact-form textarea {
+    min-height: 92px;
+    resize: vertical
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #9a948a
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--ink)
+}
+
+.contact-message,
+.contact-form-bottom,
+.contact-form-status {
+    grid-column: 1 / -1
+}
+
+.contact-form-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px
+}
+
+.contact-form-note,
+.contact-hint {
+    max-width: 310px;
+    margin: 0;
+    color: #706b63;
+    font-size: 10px;
+    line-height: 1.7
+}
+
+.contact-submit,
+.contact-primary {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    border: 1px solid var(--ink);
+    padding: 0 20px;
+    background: var(--ink);
+    color: var(--paper);
+    font: 10px var(--sans);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, color .2s
+}
+
+.contact-submit:hover,
+.contact-primary:hover {
+    background: transparent;
+    color: var(--ink)
+}
+
+.contact-submit span,
+.contact-primary span {
+    font-size: 16px
+}
+
+.contact-form-status {
+    margin: 0;
+    color: #4c684d;
+    font-size: 12px;
+    line-height: 1.6
+}
+
+.contact-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+    background: var(--ink);
+    color: var(--paper)
+}
+
+.contact-footer .eyebrow {
+    color: #c0b9ad
+}
+
+.contact-footer h2 em {
+    color: #c0b9ad
+}
+
+.contact-footer-actions {
+    display: grid;
+    justify-items: start;
+    gap: 20px
+}
+
+.contact-footer .contact-primary {
+    border-color: var(--paper);
+    background: var(--paper);
+    color: var(--ink)
+}
+
+.contact-footer .contact-primary:hover {
+    background: transparent;
+    color: var(--paper)
+}
+
+.contact-footer .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 22px
+}
+
+.contact-footer .contact-links a {
+    color: #e4ded4;
+    font-size: 11px
+}
+
+.contact-footer .contact-hint {
+    color: #c0b9ad
+}
+
+.works-contact .contact-primary {
+    margin-top: 24px
+}
+
+@media (max-width: 800px) {
+    .contact-form-section,
+    .contact-footer {
+        grid-template-columns: 1fr;
+        gap: 38px
+    }
+
+    .contact-form {
+        padding-top: 0
+    }
+}
+
+@media (max-width: 540px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+        gap: 20px
+    }
+
+    .contact-form-bottom {
+        align-items: stretch;
+        flex-direction: column
+    }
+
+    .contact-submit,
+    .contact-footer .contact-primary {
+        width: 100%
+    }
+
+    .contact-intro h2,
+    .contact-footer h2 {
+        font-size: clamp(42px, 12vw, 62px)
+    }
+}
